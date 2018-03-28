@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service4-deployment
+  labels:
+    app: service-four
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service4
+  template:
+    metadata:
+      labels:
+        app: service4
+    spec:
+      containers:
+      - name: service4
+        #image: nginx:1.7.9
+        image: rubendario/service4
+        ports:
+        - containerPort: 8080
+

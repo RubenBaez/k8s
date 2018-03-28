@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serviceresta-deployment
+  labels:
+    app: service-resta
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: serviceresta
+  template:
+    metadata:
+      labels:
+        app: serviceresta
+    spec:
+      containers:
+      - name: serviceresta
+        #image: nginx:1.7.9
+        image: rubendario/resta
+        ports:
+        - containerPort: 8080
+

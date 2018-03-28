@@ -1,0 +1,9 @@
+itsdangerous==0.24
+paramiko==1.15.2
+peewee==2.4.6
+pycrypto==2.6.1
+six==1.9.0
+gunicorn==19.7.1
+pymongo==3.6.1
+tornado==4.5.3
+

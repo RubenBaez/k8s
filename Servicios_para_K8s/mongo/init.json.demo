@@ -1,0 +1,161 @@
+[
+    {
+        "username": "opencampus",
+        "event_source": "server",
+        "name": ".course.enrollment.activated",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "time": "2016-12-15T17:28:39.104902+00:00",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "page": null,
+        "host": "soer.utpl.edu.ec",
+        "session": "ae1e46461b01349df5a04df1f4e40001",
+        "referer": "http://soer.utpl.edu.ec/home/",
+        "context": {
+            "user_id": 258,
+            "org_id": "UTPL",
+            "course_id": "course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+            "path": "/course/"
+        },
+        "ip": "172.18.7.142",
+        "event": {
+            "course_id": "course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+            "user_id": 258,
+            "mode": "honor"
+        },
+        "event_type": ".course.enrollment.activated"
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/home/",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE"
+        },
+        "time": "2016-12-15T17:28:39.146372+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/i18n.js",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/i18n.js"
+        },
+        "time": "2016-12-15T17:28:40.052377+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE"
+        },
+        "time": "2016-12-15T17:28:48.058184+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/i18n.js",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/i18n.js"
+        },
+        "time": "2016-12-15T17:28:48.695627+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE"
+        },
+        "time": "2016-12-15T17:28:49.212597+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {\"{\\\"org\\\":\\\"UTPL\\\",\\\"course_id\\\":\\\"AIRPOLLUTION\\\",\\\"run\\\":\\\"2017_ENE\\\",\\\"language\\\":\\\"en\\\",\\\"start_date\\\":\\\"2017-01-16T00:00:00.000Z\\\",\\\"end_date\\\":null,\\\"enrollment_start\\\":\\\"2016-12-15T00:00:00.000Z\\\",\\\"enrollment_end\\\":null,\\\"syllabus\\\":null,\\\"short_description\\\":\\\"\\\",\\\"overview\\\":\\\"<section class\": [\"\\\\\\\"about\\\\\\\">\\\\n  <h2>About This Course</h2>\\\\n  <p>Include your long course description here. The long course description should contain 150-400 words.</p>\\\\n\\\\n  <p>This is paragraph 2 of the l",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE"
+        },
+        "time": "2016-12-15T17:29:14.776974+00:00",
+        "page": null
+    },
+    {
+        "username": "opencampus",
+        "event_type": "/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "ip": "172.18.7.142",
+        "agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36",
+        "host": "soer.utpl.edu.ec",
+        "referer": "http://soer.utpl.edu.ec/settings/details/course-v1:UTPL+AIRPOLLUTION+2017_ENE",
+        "accept_language": "es-ES,es;q=0.8,en;q=0.6",
+        "event": "{\"POST\": {}, \"GET\": {}}",
+        "event_source": "server",
+        "context": {
+            "user_id": 258,
+            "org_id": "",
+            "course_id": "",
+            "path": "/course/course-v1:UTPL+AIRPOLLUTION+2017_ENE"
+        },
+        "time": "2016-12-15T17:29:18.495014+00:00",
+        "page": null
+    }
+]
+

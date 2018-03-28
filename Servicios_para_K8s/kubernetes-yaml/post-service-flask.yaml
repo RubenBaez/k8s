@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post-deployment-flask
+  labels:
+    app: post-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: post-flask
+  template:
+    metadata:
+      labels:
+        app: post-flask
+    spec:
+      containers:
+      - name: post-flask
+        #image: nginx:1.7.9
+        image: rubendario/post-data
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+

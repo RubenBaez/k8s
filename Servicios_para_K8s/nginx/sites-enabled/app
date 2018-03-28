@@ -1,0 +1,41 @@
+# configuration of the server
+server {
+        listen 80;
+        server_name example.org;
+        charset     utf-8;
+        # max upload size
+
+    # Static File
+    location /static {
+        alias /www/static; # your project's static files - amend as required
+        }
+
+    location / {
+        proxy_pass http://192.168.99.100:32540;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+    
+    location /post {
+	proxy_pass http://192.168.99.100:32509;
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    } 
+
+    location /delete {
+	proxy_pass http://192.168.99.100:31070;
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /informacion {
+	proxy_pass http://192.168.99.100:32371;
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+   
+  }

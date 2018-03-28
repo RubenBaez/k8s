@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-deployment-flask
+  labels:
+    app: get-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: get-flask
+  template:
+    metadata:
+      labels:
+        app: get-flask
+    spec:
+      containers:
+      - name: get-flask
+        #image: nginx:1.7.9
+        image: rubendario/get-data
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-deployment-flask
+  labels:
+    app: delete-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: delete-flask
+  template:
+    metadata:
+      labels:
+        app: delete-flask
+    spec:
+      containers:
+      - name: delete-flask
+        #image: nginx:1.7.9
+        image: rubendario/delete-data
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+

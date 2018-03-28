@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-deployment-flask
+  labels:
+    app: update-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: update-flask
+  template:
+    metadata:
+      labels:
+        app: update-flask
+    spec:
+      containers:
+      - name: update-flask
+        #image: nginx:1.7.9
+        image: rubendario/update-data
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      restartPolicy: Always
+
