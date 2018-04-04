@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-deployment-tornado
+  labels:
+    app: get-tornado
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: get-tornado
+  template:
+    metadata:
+      labels:
+        app: get-tornado
+    spec:
+      containers:
+      - name: get-tornado
+        #image: nginx:1.7.9
+        image: rubendario/get-data-tornado
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+

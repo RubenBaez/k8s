@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-deployment-tornado
+  labels:
+    app: update-tornado
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: update-tornado
+  template:
+    metadata:
+      labels:
+        app: update-tornado
+    spec:
+      containers:
+      - name: update-tornado
+        #image: nginx:1.7.9
+        image: rubendario/update-data-tornado
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      restartPolicy: Always
+

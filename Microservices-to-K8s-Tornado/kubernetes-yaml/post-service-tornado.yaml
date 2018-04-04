@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post-deployment-tornado
+  labels:
+    app: post-tornado
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: post-tornado
+  template:
+    metadata:
+      labels:
+        app: post-tornado
+    spec:
+      containers:
+      - name: post-tornado
+        #image: nginx:1.7.9
+        image: rubendario/post-data-tornado
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+

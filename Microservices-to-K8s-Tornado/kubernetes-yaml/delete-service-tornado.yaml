@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-deployment-tornado
+  labels:
+    app: delete-tornado
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: delete-tornado
+  template:
+    metadata:
+      labels:
+        app: delete-tornado
+    spec:
+      containers:
+      - name: delete-tornado
+        #image: nginx:1.7.9
+        image: rubendario/delete-data-tornado
+        ports:
+        - containerPort: 8000
+          protocol: TCP 
+      #restartPolicy: Never
+
