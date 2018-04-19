@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 #global PAG = 1
-MONGO_HOST = "192.168.99.100:30820"
+MONGO_HOST = "192.168.99.100:31715"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
