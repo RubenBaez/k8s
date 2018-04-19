@@ -9,7 +9,7 @@ app=Flask(__name__)
 #client=MongoClient('mongodb://mongo:27017')
 
 #MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:30820"
+MONGO_HOST = "192.168.99.100:31715"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
@@ -64,7 +64,7 @@ def actualizar():
     key=request.form['id']
     print(key)
     db.coll.update({"_id":ObjectId(key)}, item_doc)
-    return redirect("http://192.168.99.100:31805")
+    return redirect("http://192.168.99.100:30729")
 
 
 if __name__ == "__main__":
