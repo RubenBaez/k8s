@@ -53,7 +53,7 @@ $(document).ready(function(){
 						<h2>Informacion Mongo</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="http://192.168.99.100:31672/post" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar log</span></a>
+						<a href="http://192.168.99.100:30050/post" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar log</span></a>
 						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>						
 					</div>
                 </div>
@@ -90,8 +90,8 @@ $(document).ready(function(){
 			<td>{{item.time}}</td>
                         <td>{{item.ip}}</td>
                         <td>
-				<a href="http://192.168.99.100:30420/informacion/{{item._id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                            <a href="http://192.168.99.100:31367/delete/{{item.username}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+				<a href="http://192.168.99.100:30050/informacion/{{item._id}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="http://192.168.99.100:30050/delete/{{item.username}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
 		{% endfor %}

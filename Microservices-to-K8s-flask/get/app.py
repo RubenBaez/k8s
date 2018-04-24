@@ -9,7 +9,7 @@ app=Flask(__name__)
 #client=MongoClient('mongodb://172.18.0.2:27017') #usado en docker-compose
 
 #MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:31715"
+MONGO_HOST = "192.168.99.100:32339"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
