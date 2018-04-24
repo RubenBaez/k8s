@@ -8,7 +8,7 @@ app=Flask(__name__)
 #client=MongoClient('mongodb://mongo:27017')
 
 #MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:31715"
+MONGO_HOST = "192.168.99.100:32339"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
@@ -56,7 +56,7 @@ def new():
             }
     db.coll.insert(item_doc)
 
-    return redirect("http://192.168.99.100:30729")
+    return redirect("http://192.168.99.100:30050")
 
 
 if __name__ == "__main__":
