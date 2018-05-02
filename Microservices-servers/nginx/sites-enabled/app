@@ -39,28 +39,28 @@ server {
     }
 
     location /gettornado {
-	proxy_pass http://192.168.99.100:31136;
+	proxy_pass http://192.168.99.100:31177;
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-Ip $remote_addr;
 	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 
     location /posttornado {
-	proxy_pass http://192.168.99.100:32494;
+	proxy_pass http://192.168.99.100:30827;
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-Ip $remote_addr;
 	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 
     location /deletetornado {
-	proxy_pass http://192.168.99.100:31101;
+	proxy_pass http://192.168.99.100:31216;
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-Ip $remote_addr;
 	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 
     location /informaciontornado {
-	proxy_pass http://192.168.99.100:32586;
+	proxy_pass http://192.168.99.100:30343;
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-Ip $remote_addr;
 	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
