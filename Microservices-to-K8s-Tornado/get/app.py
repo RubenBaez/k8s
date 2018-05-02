@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 #global PAG = 1
-MONGO_HOST = "192.168.99.100:31715"
+MONGO_HOST = "192.168.99.100:32339"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
@@ -42,14 +42,14 @@ class PagHandler(tornado.web.RequestHandler):
         PAG = PAG - int(atras)
         PAG = PAG + int(siguiente)
         if PAG == 1:
-            return self.redirect("http://127.0.0.1:8000/")
+            return self.redirect("http://192.168.99.100:31177/gettornado")
         pagination = PAG * limite
         _items = db.coll.find().skip(pagination).limit(limite)
         items = [item for item in _items]
         self.render("pagination.html", items=items, PAG=PAG)
 
 settings = {
-    "blog_title": u"Datos de Mongo",
+    "blog_title": u"Datos de Mongo Tornado",
     "template_path": os.path.join(os.path.dirname(__file__), "templates"),
     "static_path" : os.path.join(os.path.dirname(__file__), "static"),
     #"ui_modules": {"Entry": EntryModule},

@@ -5,7 +5,7 @@ import os.path
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-MONGO_HOST = "192.168.99.100:31715"
+MONGO_HOST = "192.168.99.100:32339"
 MONGO_PORT = 27017
 MONGO_DB = "jsondb"
 MONGO_USER = "ruben"
@@ -49,7 +49,7 @@ class RubenHandler(tornado.web.RequestHandler):
             }
     	db.coll.insert(item_doc)
 
-    	self.redirect("http://192.168.99.100:32286/gettornado")
+    	self.redirect("http://192.168.99.100:31177/gettornado")
 
 settings = {
     "blog_title": u"Datos de Mongo",
