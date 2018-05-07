@@ -82,6 +82,6 @@ def main():
 app=main()
 
 if __name__=='__main__':
-    i#app=make_app()
+    #app=make_app()
     app.listen(8000)
     tornado.ioloop.IOLoop.current().start()

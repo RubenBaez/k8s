@@ -9,6 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /usr/src/app
 
-ENTRYPOINT ["gunicorn"]
-CMD ["-w", "2", "-b", ":8000", "app:app"]
+#ENTRYPOINT ["gunicorn"]
+ENTRYPOINT ["python"]
+#CMD ["-w", "2", "-b", ":8000", "app:app"]
+CMD ["app.py"]
 
