@@ -1,3 +1,6 @@
 [submodule "TFT-microservicios-ruben-baez"]
 	path = TFT-microservicios-ruben-baez
 	url = https://git.taw.utpl.edu.ec/reroes/TFT-microservicios-ruben-baez.git
+[submodule "kube-state-metrics"]
+	path = kube-state-metrics
+	url = https://github.com/RubenBaez/kube-state-metrics.git
