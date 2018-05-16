@@ -1,3 +1,4 @@
+#!/bin/bash
 docker run -d --name kong \
               --link kong-database:kong-database \
               -e KONG_DATABASE=postgres \
