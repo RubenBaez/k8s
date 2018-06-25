@@ -8,31 +8,34 @@ app=Flask(__name__)
 
 #client=MongoClient('mongodb://172.18.0.2:27017') #usado en docker-compose
 
-#MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:32339"
-MONGO_PORT = 27017
-MONGO_DB = "jsondb"
-MONGO_USER = "ruben"
-MONGO_PASS = "1234"
-connection = MongoClient(MONGO_HOST, MONGO_PORT)
-db = connection[MONGO_DB]
-db.authenticate(MONGO_USER, MONGO_PASS)
-#print('----')
-#pprint.pprint(db.collection_names())
+def con():
+    #MONGO_HOST = "172.18.0.2" pruebas directas con docker de mongo
+    MONGO_HOST = "192.168.99.100:32339"
+    MONGO_PORT = 27017
+    MONGO_DB = "jsondb"
+    connection = MongoClient(MONGO_HOST, MONGO_PORT)
+    db = connection[MONGO_DB]
+    return db
 
+def login_db():
+    db = con()
+    MONGO_USER = "ruben"
+    MONGO_PASS = "1234"
+    return db.authenticate(MONGO_USER, MONGO_PASS)
 
 #db = client.jsondb #usado en docker-compose
+login_db()
 
 @app.route('/')
 def todo():
     #_items = db.tododb.find()
-    _items = db.coll.find().limit(1000)
+    _items = con().coll.find().limit(1000)
     items = [item for item in _items]
     return render_template('todo.html', items=items)
 
 @app.route('/informacion/<objectIde>')
 def informacion(objectIde):
-    _items = db.coll.find({"_id": ObjectId(objectIde)})
+    _items = con().coll.find({"_id": ObjectId(objectIde)})
     itemsId = [item for item in _items]
     event=[]
     context=[]
@@ -52,7 +55,7 @@ def paginacion(param):
     if PAG == 1:
         return redirect(url_for('todo'))
     paginacion = PAG * limite
-    _items = db.coll.find().skip(paginacion).limit(limite)
+    _items = con().coll.find().skip(paginacion).limit(limite)
     items = [item for item in _items]
     return render_template('pagination.html', items=items, PAG=PAG)
 

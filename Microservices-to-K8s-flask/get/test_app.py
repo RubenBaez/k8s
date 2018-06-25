@@ -11,3 +11,7 @@ class TestConference(unittest.TestCase):
         response = self.test_app.get("http://192.168.99.100:32218/")
 
         self.assertEquals(response.status, "200 OK")
+
+    def test_login_db(self):
+        result = app.login_db()
+        self.assertEqual(result, True)
