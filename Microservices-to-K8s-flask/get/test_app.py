@@ -8,9 +8,7 @@ class TestConference(unittest.TestCase):
     def test_conference(self):
         # Use Flask's test client for our test.
         self.test_app = app.test_client()
-
         response = self.test_app.get("http://192.168.99.100:32218/")
-
         self.assertEquals(response.status, "200 OK")
 
     def test_db(self):
@@ -33,5 +31,18 @@ class TestConference(unittest.TestCase):
 
     def test_item_not_exist(self):
         self.test_app = a.test_client()
-        response = self.test_app.get("http://192.168.99.100:32218/404")
+        response = self.test_app.get("http://192.168.99.100:32218/paginacion/1/")
         self.assertEqual(response.status_code, 404)
+
+    def test_home_page_returns_correct_html(self):
+        self.test_app = a.test_client()
+        response = self.test_app.get("http://192.168.99.100:32218")	
+        tpl = a.jinja_env.get_template('todo.html')
+        self.assertEqual(tpl.render()[:2700],response.get_data(as_text=True)[:2700])
+
+    #prueba en caso de algun texto que NO deba contener el sitio
+    '''
+    def test_home_page(self):
+         self.test_app = a.test_client()
+         response = self.test_app.get("http://192.168.99.100:32218")
+         self.assertFalse('texto' in response.get_data(as_text=True))
