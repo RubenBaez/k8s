@@ -5,25 +5,26 @@ from pymongo import MongoClient
 
 app=Flask(__name__)
 
-#client=MongoClient('mongodb://mongo:27017')
+def con():
+    #MONGO_HOST = "172.17.0.2" #pruebas directas con docker de mongo
+    MONGO_HOST = "192.168.99.100:32339"
+    MONGO_PORT = 27017
+    MONGO_DB = "jsondb"
+    connection = MongoClient(MONGO_HOST, MONGO_PORT)
+    db = connection[MONGO_DB]
+    return db
 
-#MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:32339"
-MONGO_PORT = 27017
-MONGO_DB = "jsondb"
-MONGO_USER = "ruben"
-MONGO_PASS = "1234"
-connection = MongoClient(MONGO_HOST, MONGO_PORT)
-db = connection[MONGO_DB]
-db.authenticate(MONGO_USER, MONGO_PASS)
+def login_db():
+    db = con()
+    MONGO_USER = "ruben"
+    MONGO_PASS = "1234"
+    return db.authenticate(MONGO_USER, MONGO_PASS)
 
-#db = client.jsondb
+login_db()
 
 @app.route('/post')
 def todo():
-    #_items = db.tododb.find()
-    
-    
+    #_items = db.tododb.find()    
     return render_template('todo.html')
 
 @app.route('/post/new', methods=['POST'])
@@ -54,7 +55,7 @@ def new():
                 },
             'event_type':request.form['event_type']
             }
-    db.coll.insert(item_doc)
+    con().coll.insert(item_doc)
 
     return redirect("http://192.168.99.100:30050")
 
