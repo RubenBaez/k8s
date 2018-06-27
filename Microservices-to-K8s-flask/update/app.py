@@ -8,22 +8,27 @@ app=Flask(__name__)
 
 #client=MongoClient('mongodb://mongo:27017')
 
-#MONGO_HOST = "172.18.0.2"
-MONGO_HOST = "192.168.99.100:32339"
-MONGO_PORT = 27017
-MONGO_DB = "jsondb"
-MONGO_USER = "ruben"
-MONGO_PASS = "1234"
-connection = MongoClient(MONGO_HOST, MONGO_PORT)
-db = connection[MONGO_DB]
-db.authenticate(MONGO_USER, MONGO_PASS)
+def con():
+    #MONGO_HOST = "172.17.0.2" #pruebas directas con docker de mongo
+    MONGO_HOST = "192.168.99.100:32339"
+    MONGO_PORT = 27017
+    MONGO_DB = "jsondb"
+    connection = MongoClient(MONGO_HOST, MONGO_PORT)
+    db = connection[MONGO_DB]
+    return db
 
-#db = client.jsondb
+def login_db():
+    db = con()
+    MONGO_USER = "ruben"
+    MONGO_PASS = "1234"
+    return db.authenticate(MONGO_USER, MONGO_PASS)
+
+login_db()
 
 @app.route('/informacion/<objectIde>')
 def todo(objectIde):
 
-    _items = db.coll.find({"_id": ObjectId(objectIde)})
+    _items = con().coll.find({"_id": ObjectId(objectIde)})
     itemsId = [item for item in _items]
     event=[]
     context=[]
@@ -63,7 +68,7 @@ def actualizar():
 
     key=request.form['id']
     print(key)
-    db.coll.update({"_id":ObjectId(key)}, item_doc)
+    con().coll.update({"_id":ObjectId(key)}, item_doc)
     return redirect("http://192.168.99.100:30050")
 
 
