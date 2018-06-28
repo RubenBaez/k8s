@@ -5,25 +5,33 @@ import os.path
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-#global PAG = 1
-MONGO_HOST = "192.168.99.100:32339"
-MONGO_PORT = 27017
-MONGO_DB = "jsondb"
-MONGO_USER = "ruben"
-MONGO_PASS = "1234"
-connection = MongoClient(MONGO_HOST, MONGO_PORT)
-db = connection[MONGO_DB]
-db.authenticate(MONGO_USER, MONGO_PASS)
+
+def con():
+    #MONGO_HOST = "172.18.0.2" pruebas directas con docker de mongo
+    MONGO_HOST = "192.168.99.100:32339"
+    MONGO_PORT = 27017
+    MONGO_DB = "jsondb"
+    connection = MongoClient(MONGO_HOST, MONGO_PORT)
+    db = connection[MONGO_DB]
+    return db
+
+def login_db():
+    db = con()
+    MONGO_USER = "ruben"
+    MONGO_PASS = "1234"
+    return db.authenticate(MONGO_USER, MONGO_PASS)
+
+login_db()
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        _items = db.coll.find().limit(1000)
+        _items = con().coll.find().limit(1000)
         items = [item for item in _items]
         self.render("todo.html", items=items)
         
 class RubenHandler(tornado.web.RequestHandler):
     def get(self, param):
-        _items = db.coll.find({"_id":ObjectId(param)})
+        _items = con().coll.find({"_id":ObjectId(param)})
         itemsId = [item for item in _items]
         event=[]
         context=[]
@@ -44,7 +52,7 @@ class PagHandler(tornado.web.RequestHandler):
         if PAG == 1:
             return self.redirect("http://192.168.99.100:31177/gettornado")
         pagination = PAG * limite
-        _items = db.coll.find().skip(pagination).limit(limite)
+        _items = con().coll.find().skip(pagination).limit(limite)
         items = [item for item in _items]
         self.render("pagination.html", items=items, PAG=PAG)
 

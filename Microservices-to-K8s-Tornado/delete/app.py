@@ -5,14 +5,23 @@ import os.path
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-MONGO_HOST = "192.168.99.100:32339"
-MONGO_PORT = 27017
-MONGO_DB = "jsondb"
-MONGO_USER = "ruben"
-MONGO_PASS = "1234"
-connection = MongoClient(MONGO_HOST, MONGO_PORT)
-db = connection[MONGO_DB]
-db.authenticate(MONGO_USER, MONGO_PASS)
+
+def con():
+    #MONGO_HOST = "172.18.0.2" pruebas directas con docker de mongo
+    MONGO_HOST = "192.168.99.100:32339"
+    MONGO_PORT = 27017
+    MONGO_DB = "jsondb"
+    connection = MongoClient(MONGO_HOST, MONGO_PORT)
+    db = connection[MONGO_DB]
+    return db
+
+def login_db():
+    db = con()
+    MONGO_USER = "ruben"
+    MONGO_PASS = "1234"
+    return db.authenticate(MONGO_USER, MONGO_PASS)
+
+login_db()
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
@@ -22,7 +31,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 class RubenHandler(tornado.web.RequestHandler):
     def get(self, param):
-        db.coll.remove({"username":param})
+        con().coll.remove({"username":param})
         self.redirect("http://192.168.99.100:31177/gettornado")
 
 settings = {
